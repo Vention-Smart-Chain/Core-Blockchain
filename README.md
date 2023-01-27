@@ -6,7 +6,7 @@
 
 ## Instructions to setup miner node
 
-`Vention Miner Node` is very easy to install and deploy in a Docker container. This requires [Docker](https://docs.docker.com/engine/install/) to run. 
+`Vention Miner Node` is very easy to install and deploy in a Docker container. This requires [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) to run. 
 
 ### Clone the Github repository
 
