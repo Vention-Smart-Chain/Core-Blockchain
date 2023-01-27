@@ -4,9 +4,9 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://docs.vention.network)
 
-## Instructions to setup miner node
+## Instructions to setup Validator node
 
-`Vention Miner Node` is very easy to install and deploy in a Docker container. This requires [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) to run. 
+`Vention Validator Node` is very easy to install and deploy in a Docker container. This requires [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) to run. 
 
 ```sh
 sudo apt install docker && sudo apt  install docker-compose
@@ -31,3 +31,9 @@ docker-compose up --build
 ```
 
 And that's all you need to do, wait for the docker image to be built and up.
+
+#### Get the newly created wallet info from here (stored inside docker)
+
+> /app/.privatekey
+
+> /app/.accountpassword
