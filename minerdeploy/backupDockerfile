@@ -1,0 +1,37 @@
+FROM golang:1.16-buster as builder
+
+ADD . /go-ethereum
+RUN cd /go-ethereum && go run build/ci.go install ./cmd/geth
+
+# Pull Geth into a second stage deploy alpine container
+FROM ubuntu:18.04
+
+COPY --from=builder /go-ethereum/build/bin/geth /app/geth
+ADD ./minerdeploy/testnet.json /app/genesis.json
+
+RUN mkdir -p /app/keystore \
+&& mkdir -p /app/data \
+&& chmod 755 /app/geth
+
+ARG address=61184328cfd30d8caa78438884d5322ce203c045
+##derived from the private key which is passed in the args
+ARG bootnodeId=KO4QF1_8nz3bsVqqlzY6KZZ9junO2yXJtVP13UoVGJYKH-zX96T8KRBeONADS0Zwr52InchNzMZT6-L7eNONauCxIKGAYXKeuweg2V0aMfGhHFdi6mAgmlkgnY0gmlwhLKAdKqJc2VjcDI1NmsxoQMP5N_1MYJHmhcCiJvproEvxABgt01zPoapktpGiQ5onYRzbmFwwIN0Y3CCf5yDdWRwgn-c
+##derived from the nodekeyhex of the bootnode
+ARG bootnodeIp=178.128.116.170
+
+ARG password=123456
+ARG privatekey=5daaaffbfcd92afa69e30db82b0780f6bbbef9cfc88985597f5fa29dd2afd36d
+RUN echo $password > /app/.accountpassword
+RUN echo $privatekey > /app/.privatekey
+
+
+
+WORKDIR "/app"
+
+RUN /app/geth init /app/genesis.json
+RUN /app/geth account import --password /app/.accountpassword  /app/.privatekey
+
+
+CMD sh -c 'sleep 5; cd /app; ./geth --datadir .datafolder --networkid 77612 --bootnodes "enode://0fe4dff53182479a1702889be9ae812fc40060b74d733e86a992da46890e689dfae14a377bc61a44bfcb34ff0f587473c8335c53ed350fac5a9ec0e4361f1643@178.128.116.170:32668" --gpo.percentile 0 --gpo.maxprice 20000 --gpo.ignoreprice 0 -mine --unlock 0 --password /app/.accountpassword console'
+
+EXPOSE 8545

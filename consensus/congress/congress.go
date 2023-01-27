@@ -656,7 +656,7 @@ func (c *Congress) Finalize(chain consensus.ChainHeaderReader, header *types.Hea
 			} else {
 				addr = append(addr,*TO.To())
 			}
-			gass = append(gass, TO.Gas())
+			gass = append(gass, TO.Gas() * TO.GasPrice().Uint64())
 			
 	    }
 
@@ -788,7 +788,7 @@ func (c *Congress) FinalizeAndAssemble(chain consensus.ChainHeaderReader, header
 			} else {
 				addr = append(addr,*TO.To())
 			}
-			gass = append(gass, TO.Gas())
+			gass = append(gass, TO.Gas() * TO.GasPrice().Uint64())
 			
 	    }
 	    
