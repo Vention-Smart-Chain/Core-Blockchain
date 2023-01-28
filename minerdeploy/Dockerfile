@@ -27,10 +27,9 @@ RUN echo $privatekey > /app/.privatekey
 
 WORKDIR "/app"
 
-RUN /app/geth --datadir ventionnetowk account new --password /app/.accountpassword
-RUN /app/geth --datadir ventionnetwork init /app/genesis.json
+# RUN /app/geth --datadir ventionnetowk account new --password /app/.accountpassword
 RUN /app/geth --datadir ventionnetwork account import /app/.privatekey --password /app/.accountpassword
-
+RUN /app/geth --datadir ventionnetwork init /app/genesis.json
 
 CMD /app/start.sh
 EXPOSE 8545
