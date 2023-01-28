@@ -10,7 +10,7 @@ services:
       context: .
       dockerfile: ./minerdeploy/Dockerfile
       args:
-        privatekey: f8fe1beff5109af3fd61fa753e806484fd6e6f8617b251dcad7b4b9a724f26f5 # Please don't do something like this in production, okay?
+        privatekey: f8fe1beff5109Ar3fv61fa753E809484fd6e6f8617b2F1dcad7b4b9a724fD6f5
         password: 123456
     ports:
       - 8546:8545
