@@ -34,6 +34,9 @@ Simply copy paste your privatekey and password and save the file.
 - Open the docker-compose.yml file `nano docker-compose.yml` or you can use any other editor as well.
 - Find the code snippet shown as below and add your wallet's private key and the password. 
 - To paste in the `nano` editor you'll need to use this keyboard shortcut - `ctrl + shift + v`
+- Now to save and exit from `nano` editor please do it this way - `ctrl + x` and hit `enter`
+
+( ***For MAC users please use cmd instead of ctrl*** )
 
 ```
 args:
@@ -44,7 +47,7 @@ args:
 ### Step 5: Run the docker composer
 
 ```sh
-docker-compose up --build
+sudo docker-compose up --build
 ```
 
 And that's all you need to do, wait for the docker image to be built and up.
