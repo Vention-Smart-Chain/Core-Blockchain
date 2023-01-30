@@ -34,7 +34,7 @@ Simply copy paste your privatekey and password and save the file.
 - Open the docker-compose.yml file `nano docker-compose.yml` or you can use any other editor as well.
 - Find the code snippet shown as below and add your wallet's private key and the password. 
 - To paste in the `nano` editor you'll need to use this keyboard shortcut - `ctrl + shift + v`
-- Now to save and exit from `nano` editor please do it this way - `ctrl + x` and hit `enter`
+- Now to save and exit from `nano` editor please do it this way - `ctrl + x`, press `y` and just hit `enter`
 
 ( ***For MAC users please use cmd instead of ctrl*** )
 
