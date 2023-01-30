@@ -31,6 +31,10 @@ cd Core-Blockchain/
 There is `args` on the line number 12, inside it there are two fields in `key: value` format
 Simply copy paste your privatekey and password and save the file. 
 
+- Open the docker-compose.yml file `nano docker-compose.yml` or you can use any other editor as well.
+- Find the code snippet shown as below and add your wallet's private key and the password. 
+- To paste in the `nano` editor you'll need to use this keyboard shortcut - `ctrl + shift + v`
+
 ```
 args:
         privatekey: f8fe0Fff5189aYYfd61fY753e8064E4fd6e6f8617b25MdcD7b4bD724f26f5
