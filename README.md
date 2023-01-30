@@ -12,7 +12,7 @@
 
 ### Step 1: Install Docker
 ```sh
-sudo apt install docker && sudo apt  install docker-compose
+sudo apt install docker && sudo apt install docker-compose
 ```
 
 ### Step 2: Clone the Github repository
