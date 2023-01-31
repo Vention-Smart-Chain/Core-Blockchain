@@ -27,9 +27,9 @@ git clone https://github.com/Vention-Smart-Chain/Core-Blockchain
 cd Core-Blockchain/
 ```
 
-### Step 4: Add your wallet's private key and password to docker-compose.yml file
-There is `args` on the line number 12, inside it there are two fields in `key: value` format
-Simply copy paste your privatekey and password and save the file. 
+### Step 4: Add your wallet's address, private key and password to docker-compose.yml file
+There are `environment` & `args` on the line number 5 & 12 respectively, There are fields in `key: value` format
+Simply copy paste your values save the file. 
 
 - Open the docker-compose.yml file `nano docker-compose.yml` or you can use any other editor as well.
 - Find the code snippet shown as below and add your wallet's private key and the password. 
@@ -38,6 +38,14 @@ Simply copy paste your privatekey and password and save the file.
 
 ( ***For MAC users please use cmd instead of ctrl*** )
 
+#### sample snippets
+Add your wallet address in the environment as shown below
+```
+environment:
+      address=921343c8cfW30d8caa70488884d532Ece203c045
+```
+
+then add the private key and the password as shown below
 ```
 args:
         privatekey: f8fe0Fff5189aYYfd61fY753e8064E4fd6e6f8617b25MdcD7b4bD724f26f5
