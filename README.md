@@ -57,5 +57,13 @@ args:
 ```sh
 sudo docker-compose up --build
 ```
+### Step 6: Add peer
+When the building process done successfully and the validator prompt running then you'll have to add the peer
+as shown below. Get the enode and use it here.
 
+```
+admin.addPeer("enode://2072370eb034a99113eb4c63c8exxxxxxxx42ff08040ed384c757fcaf9cc802702874072f7458cc50c7693b9fa8xxxxxxxxxc69cb@bootnodeIp:32668")
+```
+
+You can directly paste in the running terminal using `ctrl + v` or `cmd + v` (for mac) and hit `enter`
 And that's all you need to do, wait for the docker image to be built and up.
