@@ -52,14 +52,48 @@ args:
         password: 123456
 ```
 
-### Step 5: Run the docker composer
+### Step 5: Initiate tmux session
+To avoid unexpected termination of the running validator node, let's use tmux to keep the process running in the background
+
+#### For the first time, do simply run `tmux`
+```sh
+tmux
+```
+Now you can jump to step no. 6, the below given are just some extra info about `tmux`
+#### Check the already running tmux sessions
+```sh
+tmux ls
+```
+
+#### Attach the tmux session
+```sh
+tmux attach -t 0
+```
+Note: zero (0) in above command is the id number of the tmux session.
+
+#### to detach tmux(keep running in background)
+```sh
+ctrl + b
+```
+```sh
+d
+```
+It's a keyboard shortcut, first type control b, and then just press d (without control button pressed)
+
+#### To delete tmux session
+```sh
+ctrl + d
+```
+Note: For the mac users, please use `cmd`, instead of `ctrl`
+
+### Step 6: Run the docker composer
 
 ```sh
 sudo docker-compose up --build
 ```
 Now wait for the docker image to be built and up...
 
-### Step 6: Add peer
+### Step 7: Add peer
 When the building process done successfully and the validator prompt running then you'll have to add the peer
 as shown below. Get the enode and use it here.
 
